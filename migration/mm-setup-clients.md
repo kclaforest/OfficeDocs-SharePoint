@@ -22,9 +22,9 @@ description: Set up multiple Migration Manager agents
 
 # Step 1: Setup Migration Manager agents
 
-When migration file shares with Migration Manager, you first set up one or more "migration agents", by running a setup file on each computer or VM you choose to configure. 
+When migrating file shares with Migration Manager, you first set up one or more "migration agents", by running a setup file on each computer or VM you choose to configure. 
 
-When you run the setup file, you are prompted for two sets of credentials.  You need SharePoint Admin credentials to access your destination, and Windows credentials with read access to the source. Those Windows credentials must have read access to all file shares you plan to migrate. This pair of credentials creates a trust with Migration Manager. Migration Manager now sees it as an available "agent" to which it can automatically distribute migrations tasks.
+When you run the setup file, you are prompted for two sets of credentials. You need SharePoint admin credentials to access your destination, and Windows credentials with read access to the source. Those Windows credentials must have read access to all file shares you plan to migrate. This pair of credentials creates a trust with Migration Manager. Migration Manager now sees it as an available "agent" to which it can automatically distribute migrations tasks.
 
 After an agent is configured, anyone with the permission to go into the <a href="https://go.microsoft.com/fwlink/?linkid=2185219" target="_blank">SharePoint admin center</a> can create tasks. The tasks will be automatically distributed to one of the configured agents.
 
@@ -36,12 +36,12 @@ After an agent is configured, anyone with the permission to go into the <a href=
 
 |Category|Guidance|Fill in with your details|
 |:-----|:-----|:-----|
-|Have the right credentials to use|SharePoint admin for migration destination Windows account for source that has access to ALL network file shares you plan to migrate. Confirm that you have SharePoint Admin credentials to access the "destination" of where you are migrating your content. Verify that the Windows credentials you plan on using to configure the agent has access to **all** the network file shares you plan to migrate.  |
+|Have the right credentials to use|SharePoint admin for migration destination. Windows account for source that has access to ALL network file shares you plan to migrate. Confirm that you have SharePoint admin credentials to access the "destination" of where you are migrating your content. Verify that the Windows credentials you plan on using to configure the agent has access to **all** the network file shares you plan to migrate.  |
 |Virtual machines or computers to use:|Determine how many VMs or computers you plan on using for your migration project. List the computers or VMs before you start.|
 |[Verify prerequisites](mm-prerequisites.md)|Make sure your computer meets the requirements.|
 |[Check required endpoints](mm-prerequisites.md)|Verify that you have the required endpoints configured.|
 |[Multi-geo tenant](#multi-geo-agent-setup)|If you have a multi-geo tenant, make sure to understand where the agent will be installed.|
-|[Pre-provision OneDrive accounts](/onedrive/pre-provision-accounts)|If you are migrating to OneDrive accounts, make sure the accounts are pre-provisioned before you migrate. The migration account must also be give site collection administrator rights to each OneDrive site. Pre-provisioning can be done by using a script as described here: [Pre-provision OneDrive for users in your organization](/onedrive/pre-provision-accounts).|
+|[Pre-provision OneDrive accounts](/onedrive/pre-provision-accounts)|If you are migrating to OneDrive accounts, make sure the accounts are pre-provisioned before you migrate. The migration account must also be given site collection administrator rights to each OneDrive site. Pre-provisioning can be done by using a script as described here: [Pre-provision OneDrive for users in your organization](/onedrive/pre-provision-accounts).|
 |[Government Cloud](mm-gov-cloud.md)|If your tenant resides in a government cloud, you may have extra steps to perform before using Migration Manager.|
 
 >[!Tip]
@@ -52,8 +52,8 @@ After an agent is configured, anyone with the permission to go into the <a href=
 
 ## Set up an agent
 
-1. From the new SharePoint admin center, select <a href="https://go.microsoft.com/fwlink/?linkid=2185075" target="_blank">**Migration center**</a>.You need to sign in with an account that has [admin permissions](/sharepoint/sharepoint-admin-role) for your organization.
-2. Under "For file shares", select **Get started**.
+1. From the new SharePoint admin center, select <a href="https://go.microsoft.com/fwlink/?linkid=2185075" target="_blank">**Migration center**</a>. You need to sign in with an account that has [admin permissions](/sharepoint/sharepoint-admin-role) for your organization.
+2. Under "File shares", select **Get started**.
 3. Select the **Agents** tab, and then select **Add**.
 4. Select **Download agent setup file**.
 5. Open the setup file. On the Welcome page, select **Next**.
@@ -102,7 +102,7 @@ The country or regional GEO code can be found here [Microsoft 365 Multi-Geo avai
 
 ![Install agent as an app](media/mm-agent-app.png)
 
-2. After the agent installs, sign in with your SharePoint Admin credentials.
+2. After the agent installs, sign in with your SharePoint admin credentials.
 3. Test if your agent has access to the file shares you want to migrate (optional).
 
 ![Install as an app settings](media/mm-agent-app-settings.png)
@@ -115,7 +115,7 @@ The country or regional GEO code can be found here [Microsoft 365 Multi-Geo avai
 
 ## Agent task assignment
 
-Migration Manager automatically assigns tasks to a available agent. You cannot manually assign a task to a specific agent. Each agent can have up to 10 tasks in its queue.
+Migration Manager automatically assigns tasks to an available agent. You cannot manually assign a task to a specific agent. Each agent can have up to 10 tasks in its queue.
 
 Pausing a task does not release the agent to another task. An agent remains unavailable to accept a new task until the task is resumed and completed, or if the task is deleted.
 
